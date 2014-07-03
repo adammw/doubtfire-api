@@ -287,6 +287,38 @@ namespace :db do
         puts "!"
       end #tutorial
     end #unit
+
+
+    puts "creating schedules"
+    schedule = [ 
+      { tut: :acain, 
+        times: [ 
+          { day: 0, start_time: DateTime.parse("08:00"), duration: 120 }, 
+          { day: 1, start_time: DateTime.parse("09:00"), duration: 120 }, 
+          { day: 2, start_time: DateTime.parse("14:00"), duration: 120 }, 
+          { day: 3, start_time: DateTime.parse("10:00"), duration: 120 }, 
+          { day: 4, start_time: DateTime.parse("13:00"), duration: 120 } 
+        ]
+      }, 
+      { tut: :cwoodward, 
+        times: [ 
+          { day: 0, start_time: DateTime.parse("08:00"), duration: 120 }, 
+          { day: 1, start_time: DateTime.parse("10:00"), duration: 120 }, 
+          { day: 2, start_time: DateTime.parse("15:00"), duration: 120 }, 
+          { day: 3, start_time: DateTime.parse("12:00"), duration: 120 }, 
+          { day: 4, start_time: DateTime.parse("09:00"), duration: 120 } 
+        ]
+      } 
+    ]
+    schedule.each do | s | 
+      s[:times].each do | t | 
+        test_schedule = HelpdeskSchedule.new(start_time: t[:start_time], duration: t[:duration], day: t[:day], user: user_cache[s[:tut]]) 
+        test_schedule.save
+      end 
+    end #schedule
+
+
+
     puts "----> Done."
   end
 end
