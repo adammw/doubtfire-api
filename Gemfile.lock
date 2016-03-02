@@ -36,7 +36,7 @@ GEM
     axiom-types (0.0.5)
       descendants_tracker (~> 0.0.1)
       ice_nine (~> 0.9)
-    backports (3.3.5)
+    backports (3.6.8)
     bcrypt-ruby (3.1.2)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -74,7 +74,7 @@ GEM
     encryptor (1.3.0)
     equalizer (0.0.7)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.9.1)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.4.0)
@@ -267,3 +267,6 @@ DEPENDENCIES
   terminator
   thin
   wkhtmltopdf-binary-11
+
+BUNDLED WITH
+   1.11.2
